@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#060606" />
-  <meta name="description" content="Tunnel Barber Club — barbearia no Porto, Rua Fernão Magalhães." />
-  <title>Tunnel Barber Club</title>
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="TUNNEL® BarberClub — Rua Fernão Magalhães, Porto." />
+  <title>TUNNEL® BarberClub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,8 +13,10 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Tunnel Barber Club - início">
-      <img src="assets/logo-original.jpg" alt="Tunnel Barber Club" />
+    <a class="brand" href="#inicio" aria-label="TUNNEL BarberClub - início">
+      <span class="brand-arch" aria-hidden="true"></span>
+      <strong>TUNNEL</strong>
+      <small>BARBER CLUB</small>
     </a>
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <nav class="nav" aria-label="Navegação principal">
@@ -25,50 +27,104 @@
     </nav>
     <a class="book book-header" href="#servicos">Marcar horário</a>
   </header>
+
   <main>
-    <section class="hero" id="inicio" aria-label="Tunnel Barber Club">
-      <img class="hero-image" src="assets/hero-tunnel.png" alt="Entrada iluminada do Tunnel Barber Club" />
+    <section class="hero" id="inicio" aria-label="TUNNEL BarberClub">
+      <img class="hero-image" src="https://miro.medium.com/v2/resize%3Afit%3A1400/0%2A16qRVCLJrtfEmpP9" alt="Túnel iluminado" />
       <div class="hero-shade"></div>
+      <div class="hero-mark" aria-label="TUNNEL Barber Club">
+        <span class="hero-arch" aria-hidden="true"></span>
+        <strong>TUNNEL</strong>
+        <small>BARBER CLUB</small>
+      </div>
     </section>
+
     <section class="services section" id="servicos">
       <div class="section-head">
-        <div><span class="eyebrow">Os nossos</span><h1>Serviços</h1></div>
+        <div>
+          <span class="eyebrow">Os nossos</span>
+          <h1>Serviços</h1>
+        </div>
         <p>Escolhe o serviço. Nós tratamos do resto.</p>
       </div>
+
       <div class="featured-row">
         <button class="service-card featured" data-service="Cabelo + Barba" data-price="25€" data-description="Inclui máscara facial, toalha quente e sobrancelha a cera.">
-          <img src="assets/combo-mask.png" alt="Máscara facial durante o serviço Cabelo + Barba" />
+          <img src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV80MF9waG90b19vZl9jbGllbnRfZG9pbmdfaGFpcl9jdXRfYXRfYV9iYXJiZXJfc19jYzdlZjE0Ny03YzJjLTQzZmUtODlhNi0zMDU1NTA0ZDNhOWJfMS5qcGc.jpg" alt="Serviço completo de cabelo e barba" />
           <span class="service-overlay"></span>
-          <span class="service-copy"><span class="service-title">Cabelo + Barba</span><strong>25€</strong><small>Máscara facial · toalha quente · sobrancelha a cera</small></span>
+          <span class="service-copy">
+            <span class="service-title">Cabelo + Barba</span>
+            <strong>25€</strong>
+            <small>Máscara facial · toalha quente · sobrancelha a cera</small>
+          </span>
           <span class="arrow" aria-hidden="true">→</span>
         </button>
+
         <button class="service-card fresh" data-service="Fresh Up" data-price="10€" data-description="Alinhamento até 7 dias após o serviço de Cabelo + Barba.">
-          <img src="assets/fresh-up.png" alt="Fresh Up com toalha quente" />
+          <img src="https://panazfriseur.de/_next/image?q=75&url=%2Fimages%2Fservice-shave.webp&w=3840" alt="Toalha quente no rosto" />
           <span class="service-overlay"></span>
-          <span class="service-copy"><span class="service-title">Fresh Up</span><strong>10€</strong><small>Até 7 dias após Cabelo + Barba</small></span>
+          <span class="service-copy">
+            <span class="service-title">Fresh Up</span>
+            <strong>10€</strong>
+            <small>Até 7 dias após Cabelo + Barba</small>
+          </span>
           <span class="arrow" aria-hidden="true">→</span>
         </button>
       </div>
-      <div class="fresh-note" aria-label="Ligação entre Cabelo + Barba e Fresh Up"><span>Depois do Cabelo + Barba</span><b>Fresh Up disponível até 7 dias</b></div>
+
+      <div class="fresh-note">
+        <span>Depois do Cabelo + Barba</span>
+        <b>Fresh Up disponível até 7 dias</b>
+      </div>
+
       <div class="service-grid">
-        <button class="service-card compact" data-service="Cabelo" data-price="17,5€"><img src="assets/cabelo.png" alt="Corte de cabelo" /><span class="service-overlay"></span><span class="service-copy"><span class="service-title">Cabelo</span><strong>17,5€</strong></span><span class="arrow">→</span></button>
-        <button class="service-card compact" data-service="Barba c/ toalha quente" data-price="10€"><img src="assets/barba.png" alt="Barba com toalha quente" /><span class="service-overlay"></span><span class="service-copy"><span class="service-title">Barba c/ toalha quente</span><strong>10€</strong></span><span class="arrow">→</span></button>
-        <button class="service-card compact" data-service="Corte Júnior/Sénior" data-price="12,5€"><img src="assets/junior-senior.png" alt="Corte Júnior ou Sénior" /><span class="service-overlay"></span><span class="service-copy"><span class="service-title">Corte Júnior/Sénior</span><strong>12,5€</strong></span><span class="arrow">→</span></button>
-        <button class="service-card compact wide" data-service="Corte + Madeixas" data-price="55€"><img src="assets/madeixas.png" alt="Corte com madeixas" /><span class="service-overlay"></span><span class="service-copy"><span class="service-title">Corte + Madeixas</span><strong>55€</strong></span><span class="arrow">→</span></button>
-        <button class="service-card compact wide" data-service="Corte + Platinado" data-price="65€"><img src="assets/platinado.png" alt="Corte com platinado" /><span class="service-overlay"></span><span class="service-copy"><span class="service-title">Corte + Platinado</span><strong>65€</strong></span><span class="arrow">→</span></button>
+        <button class="service-card compact" data-service="Cabelo" data-price="17,5€">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9061d77006159.56b78fb0287ee.jpg" alt="Corte de cabelo" />
+          <span class="service-overlay"></span><span class="service-copy"><span class="service-title">Cabelo</span><strong>17,5€</strong></span><span class="arrow">→</span>
+        </button>
+        <button class="service-card compact" data-service="Barba c/ toalha quente" data-price="10€">
+          <img src="https://panazfriseur.de/_next/image?q=75&url=%2Fimages%2Fservice-shave.webp&w=3840" alt="Barba com toalha quente" />
+          <span class="service-overlay"></span><span class="service-copy"><span class="service-title">Barba c/ toalha quente</span><strong>10€</strong></span><span class="arrow">→</span>
+        </button>
+        <button class="service-card compact" data-service="Corte Júnior/Sénior" data-price="12,5€">
+          <img src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV80MF9waG90b19vZl9jbGllbnRfZG9pbmdfaGFpcl9jdXRfYXRfYV9iYXJiZXJfc19jYzdlZjE0Ny03YzJjLTQzZmUtODlhNi0zMDU1NTA0ZDNhOWJfMS5qcGc.jpg" alt="Corte júnior ou sénior" />
+          <span class="service-overlay"></span><span class="service-copy"><span class="service-title">Corte Júnior/Sénior</span><strong>12,5€</strong></span><span class="arrow">→</span>
+        </button>
+        <button class="service-card compact wide" data-service="Corte + Madeixas" data-price="55€">
+          <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/9061d77006159.56b78fb0287ee.jpg" alt="Corte com madeixas" />
+          <span class="service-overlay"></span><span class="service-copy"><span class="service-title">Corte + Madeixas</span><strong>55€</strong></span><span class="arrow">→</span>
+        </button>
+        <button class="service-card compact wide" data-service="Corte + Platinado" data-price="65€">
+          <img src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsX29mZmljZV80MF9waG90b19vZl9jbGllbnRfZG9pbmdfaGFpcl9jdXRfYXRfYV9iYXJiZXJfc19jYzdlZjE0Ny03YzJjLTQzZmUtODlhNi0zMDU1NTA0ZDNhOWJfMS5qcGc.jpg" alt="Corte com platinado" />
+          <span class="service-overlay"></span><span class="service-copy"><span class="service-title">Corte + Platinado</span><strong>65€</strong></span><span class="arrow">→</span>
+        </button>
       </div>
     </section>
+
     <section class="space section" id="espaco">
-      <div class="space-panel"><span class="eyebrow">O nosso espaço</span><h2>Rua Fernão Magalhães<br>Porto</h2><p>Visual simples, serviço cuidado e uma experiência sem complicações.</p><a class="outline-button" href="#contactos">Ver contactos</a></div>
+      <div class="space-panel">
+        <span class="eyebrow">O nosso espaço</span>
+        <h2>Rua Fernão Magalhães<br>Porto</h2>
+        <p>Visual simples, serviço cuidado e uma experiência sem complicações.</p>
+        <a class="outline-button" href="#contactos">Ver contactos</a>
+      </div>
     </section>
   </main>
+
   <footer id="contactos">
     <div class="footer-location"><span class="pin">●</span><div><strong>Rua Fernão Magalhães</strong><span>Porto</span></div></div>
-    <div class="footer-social" aria-label="Redes sociais"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="TikTok">TikTok</a><a href="#" aria-label="WhatsApp">WhatsApp</a></div>
+    <div class="footer-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a></div>
   </footer>
+
   <dialog class="service-modal" id="serviceModal">
-    <button class="modal-close" aria-label="Fechar">×</button><span class="eyebrow">Serviço selecionado</span><h2 id="modalTitle"></h2><strong id="modalPrice"></strong><p id="modalDescription"></p><a class="book modal-book" href="#contactos">Marcar horário</a>
+    <button class="modal-close" aria-label="Fechar">×</button>
+    <span class="eyebrow">Serviço selecionado</span>
+    <h2 id="modalTitle"></h2>
+    <strong id="modalPrice"></strong>
+    <p id="modalDescription"></p>
+    <a class="book modal-book" href="#contactos">Marcar horário</a>
   </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>

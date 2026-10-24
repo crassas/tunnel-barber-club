@@ -1042,3 +1042,10 @@ body:has(dialog[open]) {
     font-size: 58px;
   }
 }
+
+/* Original client JPEGs. CSS clips only the surrounding blank margins. */
+.brand .logo-window { display: block; position: relative; overflow: hidden; width: 116px; height: 57px; mix-blend-mode: screen; }
+.logo-window img { position: absolute; width: 114.52%; height: auto; max-width: none; left: -7.35%; top: -83.67%; }
+.emblem-window { position: relative; overflow: hidden; width: 148px; aspect-ratio: 920 / 790; margin-bottom: 32px; mix-blend-mode: screen; }
+.emblem-window img { position: absolute; width: 125.22%; height: auto; max-width: none; left: -12.5%; top: -43.54%; }
+@media(max-width:700px) { .brand .logo-window { width: 100px; height: 49px; } .site-header { padding-block: 12px; } }

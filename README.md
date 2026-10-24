@@ -8,7 +8,7 @@ Neutral black, white and greys only. Editorial portrait, raised light service pa
 
 ### Original materials and limits
 
-- The official client logo was not found in the repository or the available Library search. The invented inline SVGs have been removed. The header/footer display plain brand text as a temporary fallback, **not an official logo**. Replace it with the client's authorized original asset before final brand sign-off.
+- Official client originals supplied on 24 October 2026 are now used unchanged: `assets/tunnel-wordmark-original.jpg` (22344.jpg) in header/footer and `assets/tunnel-emblem-original.jpg` (22380.jpg) in the club section. CSS only clips empty outer margins and blends the black background into the monochrome page; no redraw, tracing or generated substitute is used.
 - `assets/editorial.webp` is an AI-generated photographic triptych, clearly labeled in the UI. It illustrates haircut, facial mask and hot towel treatments; it does not depict real clients, staff or the shop. Generated with the built-in image generation tool on 24 October 2026. Brief: neutral black-and-white editorial barber portraits and treatment close-ups, realistic skin/cloth, studio lighting, no text/logos. Approved Pinterest screenshots are layout references only and are not copied into the site.
 - `https://instagram.com/tunnel.barberclub` is retained from the previous implementation. Ownership/reachability has not been independently verified. No new telephone, address, opening hours or staff information is invented.
 - Service buttons open accessible native dialogs. `Ver contacto` closes the dialog and navigates to `#contactos`; `Abrir Instagram` opens the inherited Instagram URL. **Neither action confirms a reservation. There is no booking backend.**

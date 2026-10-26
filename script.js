@@ -72,13 +72,14 @@ if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').match
 document.querySelectorAll('input[name="barber"]').forEach(input=>input.addEventListener('change',()=>{
  const preference=input.value==='Sem preferência'?'Sem preferência de barbeiro.':`Barbeiro: ${input.value}.`;
  document.getElementById('bookingMessage').value=`Olá! Gostava de marcar ${title.textContent} (${price.textContent}). ${preference} Que horários têm disponíveis?`;
+ document.querySelector('.modal-book').href='https://wa.me/351930626800?text='+encodeURIComponent(document.getElementById('bookingMessage').value);
  document.querySelector('.booking-next').hidden=false;
  document.querySelector('.copy-status').textContent='';
 }));
 document.querySelector('.copy-booking').addEventListener('click',async()=>{
  const message=document.getElementById('bookingMessage'),status=document.querySelector('.copy-status');
- try{await navigator.clipboard.writeText(message.value);status.textContent='Pedido copiado. Abre o Instagram e cola-o na mensagem.';}
- catch{message.focus();message.select();status.textContent='Seleciona e copia o texto acima para o enviares no Instagram.';}
+ try{await navigator.clipboard.writeText(message.value);status.textContent='Pedido copiado. Abre o WhatsApp para enviar.';}
+ catch{message.focus();message.select();status.textContent='Seleciona e copia o texto acima para o enviares no WhatsApp.';}
 });
 // An opening announcement should not remain a future promise after the date.
 if(new Date()>=new Date('2026-11-02T00:00:00Z'))document.querySelector('.opening-note').hidden=true;

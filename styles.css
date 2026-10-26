@@ -138,3 +138,27 @@ footer{padding:32px 0 40px;border-top:1px solid #171717;display:flex;justify-con
 }
 @media(max-width:700px){.hero-content{position:static}.hero-info{top:90px;right:20px;width:43%;height:140px}.hero-content h1{position:relative}.hero-actions{position:relative}}
 @media(prefers-reduced-motion:reduce){.info-face:nth-child(n){animation:none;transform:none;opacity:0;visibility:hidden}.info-face:first-child{opacity:1;visibility:visible}}
+
+/* Compact angular display type, served locally, with independent hero layouts. */
+@font-face{font-family:TunnelDisplay;src:url('assets/teko-bold.ttf') format('truetype');font-style:normal;font-weight:700;font-display:swap}
+.hero-info .info-face{background:transparent;gap:8px;padding:0 0 0 18px;border-left:2px solid #875759;justify-content:center}
+.hero-info .info-face strong,.hero-info .info-face:first-child strong{font-family:TunnelDisplay,"Barlow Condensed",sans-serif;font-weight:700;font-size:46px;line-height:.93;letter-spacing:.015em;text-transform:uppercase;text-shadow:none;font-synthesis:none}
+.hero-info .info-face span{font:600 11px/1.4 Manrope,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#b8b8b8}
+.hero-info .info-face small{font:500 12px/1.4 Manrope,Arial,sans-serif;color:#aaa}
+@media(min-width:701px){
+.hero-content{width:54%;max-width:850px;margin-left:40%;padding:48px 0;gap:28px;min-height:540px}
+.hero-content h1{order:0;width:85%;max-width:650px}
+.hero-info{order:1;width:100%;height:124px;margin:0;flex-shrink:0}
+.hero-actions{order:2;gap:16px}
+.hero-info .info-face strong br{display:block}
+.hero-info .info-face strong{line-height:1.05}
+}
+@media(min-width:701px) and (max-width:1050px){.hero-content{margin-left:38%;width:58%;padding:36px 0;min-height:480px;gap:22px}.hero-info .info-face strong,.hero-info .info-face:first-child strong{font-size:36px}.hero-actions .action{min-width:0;font-size:12px;padding:15px 16px;gap:14px}.hero-info{height:110px}}
+@media(max-width:700px){
+.hero-content{padding:0 20px 28px;margin:0;width:auto;max-width:none;min-height:0;display:block}
+.hero-info{top:82px;right:18px;width:45%;height:166px;margin:0}
+.hero-info .info-face{padding:0 0 0 12px;gap:9px;border-left:1px solid #875759}
+.hero-info .info-face strong,.hero-info .info-face:first-child strong{font-size:clamp(29px,8.1vw,43px);line-height:.98;letter-spacing:.01em}
+.hero-info .info-face span{font-size:10px;letter-spacing:.09em}.hero-info .info-face small{font-size:11px}
+.hero-content h1{width:min(100%,340px);margin:0 0 24px}.hero-visual{height:330px}
+}

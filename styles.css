@@ -180,3 +180,8 @@ footer{padding:32px 0 40px;border-top:1px solid #171717;display:flex;justify-con
 .hero-video{object-position:center;transition:opacity .6s ease}
 @media(max-width:700px){.hero-image,.hero-video{inset:auto;left:0;top:0;width:180px;height:330px;max-width:none;object-fit:contain;object-position:left top;transform:none;clip-path:none;mask-image:linear-gradient(to right,#000 86%,transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 86%,transparent 100%)}.hero-info{transition:none}}
 @media(prefers-reduced-motion:reduce){.hero-image,.hero-video{transition:none}}
+
+/* Switching layouts never replaces a playing video's source. */
+.hero-video{opacity:1;transition:none}.hero-video-desktop{display:block}.hero-video-mobile{display:none}.hero .hero-image{opacity:1;transition:none}
+@media(max-width:700px){.hero-video-desktop{display:none}.hero-video-mobile{display:block}}
+@media(prefers-reduced-motion:reduce){.hero-video-desktop,.hero-video-mobile{display:none}}

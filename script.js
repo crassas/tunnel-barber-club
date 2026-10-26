@@ -51,21 +51,24 @@ if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').match
   });
 }
 
-// Continuous silent film, with a full-height portrait source on small screens.
+// Independent media elements preserve their poster/frame across viewport changes.
 (()=>{
- const hero=document.querySelector('.hero'),video=document.querySelector('.hero-video');
+ const hero=document.querySelector('.hero');
+ const desktop=document.querySelector('.hero-video-desktop'),phone=document.querySelector('.hero-video-mobile');
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),mobile=matchMedia('(max-width:700px)');
- let inView=true;
- const sync=()=>{if(reduced.matches||document.hidden||!inView){video.pause();return;}video.play().catch(()=>{hero.classList.remove('film-ready');});};
- video.muted=true;video.loop=true;
- video.addEventListener('playing',()=>{hero.classList.add('film-ready');video.classList.add('is-visible');});
- video.addEventListener('error',()=>{hero.classList.remove('film-ready');video.classList.remove('is-visible');});
+ let visible=true;
+ const sync=()=>{
+  const active=mobile.matches?phone:desktop;
+  [desktop,phone].forEach(video=>{
+   video.muted=true;
+   if(video!==active||reduced.matches||document.hidden||!visible)video.pause();
+   else video.play().catch(()=>{});
+  });
+ };
  document.addEventListener('visibilitychange',sync);
- new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
- const start=()=>{if(reduced.matches){video.pause();hero.classList.remove('film-ready');return;}
- const source=mobile.matches?'assets/hero-smoke-mobile.mp4':video.dataset.src;
- if(video.getAttribute('src')!==source){hero.classList.remove('film-ready');video.classList.remove('is-visible');video.src=source;video.load();}sync();};
- reduced.addEventListener('change',start);mobile.addEventListener('change',start);start();
+ reduced.addEventListener('change',sync);mobile.addEventListener('change',sync);
+ new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
+ sync();
 })();
 
 // Carry the selected service, price and barber into a message the visitor sends.

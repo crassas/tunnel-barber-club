@@ -34,4 +34,15 @@ modal?.addEventListener('click',e=>{if(e.target===modal) modal.close();});
 // Close the mobile navigation with Escape and restore keyboard focus.
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && nav?.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu';menu.focus();}});
 
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('ready');observer.observe(el);});}
+// Motion uses local, version-pinned assets. Content stays visible if unavailable.
+if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const {animate,inView}=window.Motion;
+  animate('.hero-content',{opacity:[0,1],y:[10,0]},{duration:.55,ease:'easeOut'});
+  inView('.signature, .price-row, .return-offer',element=>{
+    animate(element,{opacity:[.35,1],y:[12,0]},{duration:.45,ease:'easeOut'});
+  },{amount:.15});
+  document.querySelectorAll('.action,.offer-button,.base-book,.price-row').forEach(element=>{
+    element.addEventListener('pointerdown',()=>animate(element,{scale:.985},{duration:.12}));
+    ['pointerup','pointercancel','pointerleave','blur'].forEach(event=>element.addEventListener(event,()=>animate(element,{scale:1},{duration:.2,ease:'easeOut'})));
+  });
+}

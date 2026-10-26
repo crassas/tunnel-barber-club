@@ -82,3 +82,21 @@ document.querySelector('.copy-booking').addEventListener('click',async()=>{
 });
 // An opening announcement should not remain a future promise after the date.
 if(new Date()>=new Date('2026-11-02T00:00:00Z'))document.querySelector('.opening-note').hidden=true;
+
+// Small, one-off movements guide attention without competing with the hero film.
+if(window.Motion&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const {animate,inView}=window.Motion;
+ inView('.section-rule, .price-list h2, .about-brand, .location h2',element=>{
+  animate(element,{opacity:[.4,1],y:[12,0]},{duration:.65,ease:'easeOut'});
+ },{amount:.35});
+ inView('.barber-team',element=>{
+  element.querySelectorAll('li').forEach((item,index)=>animate(item,{opacity:[.3,1],x:[-12,0]},{duration:.45,delay:index*.1,ease:'easeOut'}));
+ },{amount:.3});
+ inView('.tunnel-interior',element=>{
+  animate(element.querySelector('img'),{scale:[1.035,1]},{duration:1.6,ease:'easeOut'});
+ },{amount:.25});
+ document.querySelectorAll('input[name="barber"]').forEach(input=>input.addEventListener('change',()=>{
+  animate(input.closest('label'),{scale:[.985,1]},{duration:.22,ease:'easeOut'});
+  animate('.booking-next',{opacity:[.45,1],y:[7,0]},{duration:.3,ease:'easeOut'});
+ }));
+}

@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "impeccable": "^4.7.0"
+  },
+  "scripts": {
+    "design:check": "impeccable detect index.html"
+  }
+}

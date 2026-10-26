@@ -101,3 +101,17 @@ if(window.Motion&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   animate('.booking-next',{opacity:[.45,1],y:[7,0]},{duration:.3,ease:'easeOut'});
  }));
 }
+
+// Reveal the team heading once; keep it visible without JS or with reduced motion.
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+ const heading = document.getElementById('team-title');
+ if (heading) {
+  const observer = new IntersectionObserver(entries => {
+   if (entries.some(entry => entry.isIntersecting)) {
+    heading.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:550,easing:'ease-out'});
+    observer.disconnect();
+   }
+  }, {threshold:0.4});
+  observer.observe(heading);
+ }
+}

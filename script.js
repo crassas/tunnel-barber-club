@@ -41,7 +41,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape' && nav?.classList.co
 // Motion uses local, version-pinned assets. Content stays visible if unavailable.
 if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   const {animate,inView}=window.Motion;
-  animate('.hero-content',{opacity:[0,1],y:[10,0]},{duration:.55,ease:'easeOut'});
+  // Hero geometry stays stable from first paint; only its messages fade.
   inView('.signature, .price-row, .return-offer',element=>{
     animate(element,{opacity:[.35,1],y:[12,0]},{duration:.45,ease:'easeOut'});
   },{amount:.15});
@@ -64,7 +64,7 @@ if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').match
  new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
  const start=()=>{if(reduced.matches){video.pause();hero.classList.remove('film-ready');return;}
  const source=mobile.matches?'assets/hero-smoke-mobile.mp4':video.dataset.src;
- if(video.getAttribute('src')!==source){video.src=source;video.load();}sync();};
+ if(video.getAttribute('src')!==source){hero.classList.remove('film-ready');video.classList.remove('is-visible');video.src=source;video.load();}sync();};
  reduced.addEventListener('change',start);mobile.addEventListener('change',start);start();
 })();
 

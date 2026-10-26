@@ -33,3 +33,5 @@ document.querySelector('.modal-book')?.addEventListener('click',()=>modal.close(
 modal?.addEventListener('click',e=>{if(e.target===modal) modal.close();});
 // Close the mobile navigation with Escape and restore keyboard focus.
 document.addEventListener('keydown',e=>{if(e.key==='Escape' && nav?.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu';menu.focus();}});
+
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('ready');observer.observe(el);});}

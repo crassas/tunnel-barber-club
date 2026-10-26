@@ -24,10 +24,12 @@ const description=document.getElementById('modalDescription');
 document.querySelectorAll('.service-click').forEach(el=>el.addEventListener('click',()=>{
   title.textContent=el.dataset.service||'Serviço';
   price.textContent=el.dataset.price||'';
-  description.textContent=el.dataset.description||'Seleciona este serviço para marcar o teu horário.';
+  description.textContent=el.dataset.description||'';
   modal.showModal();
 }));
 
 document.querySelector('.modal-close')?.addEventListener('click',()=>modal.close());
 document.querySelector('.modal-book')?.addEventListener('click',()=>modal.close());
 modal?.addEventListener('click',e=>{if(e.target===modal) modal.close();});
+// Close the mobile navigation with Escape and restore keyboard focus.
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && nav?.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu';menu.focus();}});

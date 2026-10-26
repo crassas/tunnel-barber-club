@@ -12,131 +12,94 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="TUNNEL Barber Club">
-      <svg viewBox="0 0 160 118" class="brand-logo" aria-hidden="true">
-        <path d="M18 105V61L45 26H115L142 61V105" fill="none" stroke="currentColor" stroke-width="6"/>
-        <path d="M18 61H49A31 31 0 0 1 111 61H142M35 39l20 28M58 27l10 34M102 27l-10 34M125 39l-20 28M18 78h30M112 78h30M18 92h30M112 92h30" fill="none" stroke="currentColor" stroke-width="4"/>
-        <text x="80" y="80" text-anchor="middle" fill="currentColor" font-size="18" font-family="Barlow Condensed, sans-serif" font-weight="800">TUNNEL</text>
-        <text x="80" y="94" text-anchor="middle" fill="currentColor" font-size="7" font-family="Barlow Condensed, sans-serif" font-weight="700">BARBER CLUB</text>
-      </svg>
+      <span class="logo-crop"><img src="assets/tunnel-logo.webp" alt="TUNNEL BarberClub" width="576" height="768"></span>
     </a>
-    <nav class="nav" aria-label="Navegação principal">
+    <nav id="navigation" class="nav" aria-label="Navegação principal">
       <a href="#inicio">Início</a>
       <a href="#servicos">Serviços</a>
       <a href="#galeria">Galeria</a>
       <a href="#sobre">Sobre</a>
       <a href="#contactos">Contactos</a>
     </nav>
-    <a class="pill" href="#servicos">Marcar horário</a>
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+    <a class="pill" href="#contactos">Marcar</a>
+    <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Menu</button>
   </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-grid"></div>
-      <div class="hero-copy">
-        <span class="micro">Mais do que um corte</span>
-        <h1>TUNNEL</h1>
-        <h2>BARBER CLUB</h2>
-        <div class="hero-words"><span>Disciplina</span><span>Estilo</span><span>Atitude</span></div>
-        <a class="hero-cta" href="#servicos">Marcar horário <span>→</span></a>
-      </div>
-
-      <div class="hero-scene" aria-hidden="true">
-        <div class="tunnel-wall wall-1"></div>
-        <div class="tunnel-wall wall-2"></div>
-        <div class="tunnel-wall wall-3"></div>
-        <div class="tunnel-wall wall-4"></div>
-        <div class="tunnel-wall wall-5"></div>
-        <div class="tunnel-light"></div>
-        <div class="chair">
-          <div class="chair-head"></div>
-          <div class="chair-back"></div>
-          <div class="chair-seat"></div>
-          <div class="chair-base"></div>
-        </div>
-        <div class="floor"></div>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-visual"><img class="hero-image" src="assets/hero-tunnel.webp" alt="Retrato criado por IA para a TUNNEL BarberClub, com o logótipo da marca" width="1983" height="793" fetchpriority="high"></div>
+      <div class="hero-content">
+        <h1 id="hero-title">TUNNEL<sup>®</sup><span>BarberClub</span></h1>
+        <div class="hero-actions"><a class="action primary" href="#contactos">Marcar <span aria-hidden="true">↗</span></a><a class="action secondary" href="#servicos">Serviços e preços <span aria-hidden="true">↓</span></a></div>
       </div>
     </section>
 
-    <section class="services section" id="servicos">
-      <div class="services-title">
-        <div>
-          <span class="micro">Serviços</span>
-          <h2>Cuidamos do teu estilo</h2>
-          <small>Técnica, detalhe e experiência num só lugar.</small>
+    <section class="services section" id="servicos" aria-labelledby="services-title">
+      <div class="price-layout">
+        <div class="price-list">
+          <p class="micro">TUNNEL® BARBERCLUB</p>
+          <h2 id="services-title">Serviços e preços</h2>
+          <button type="button" class="price-row service-click featured" data-service="Cabelo + Barba" data-price="25 €" data-description="Inclui máscara facial, toalha quente e sobrancelha a cera." aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">01</span>
+            <span class="service-name"><span>Cabelo + Barba</span><small>Inclui máscara facial, toalha quente e sobrancelha a cera.</small></span>
+            <strong>25 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="price-row service-click" data-service="Fresh Up" data-price="10 €" data-description="Alinhamento até 7 dias após o serviço de Cabelo + Barba." aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">02</span>
+            <span class="service-name"><span>Fresh Up</span><small>Alinhamento até 7 dias após o serviço de Cabelo + Barba.</small></span>
+            <strong>10 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="price-row service-click" data-service="Cabelo" data-price="17,50 €" data-description="" aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">03</span>
+            <span class="service-name"><span>Cabelo</span></span>
+            <strong>17,50 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="price-row service-click" data-service="Barba com toalha quente" data-price="10 €" data-description="" aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">04</span>
+            <span class="service-name"><span>Barba com toalha quente</span></span>
+            <strong>10 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="price-row service-click" data-service="Corte Júnior/Sénior" data-price="12,50 €" data-description="" aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">05</span>
+            <span class="service-name"><span>Corte Júnior/Sénior</span></span>
+            <strong>12,50 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="price-row service-click" data-service="Corte + Madeixas" data-price="55 €" data-description="" aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">06</span>
+            <span class="service-name"><span>Corte + Madeixas</span></span>
+            <strong>55 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="price-row service-click" data-service="Corte + Platinado" data-price="65 €" data-description="" aria-haspopup="dialog">
+            <span class="service-number" aria-hidden="true">07</span>
+            <span class="service-name"><span>Corte + Platinado</span></span>
+            <strong>65 €</strong><span class="row-arrow" aria-hidden="true">↗</span>
+          </button>
+          <a class="price-contact" href="#contactos">Marcações <span aria-hidden="true">↗</span></a>
         </div>
-        <p>Mais do que um corte, uma experiência completa. Serviços pensados ao detalhe, com tempo, técnica e atenção em cada cliente.</p>
-      </div>
-
-      <article class="feature-service service-click" data-service="Cabelo + Barba" data-price="25€" data-description="Inclui máscara facial, toalha quente e sobrancelha a cera.">
-        <div class="feature-copy">
-          <span class="micro">Serviço principal</span>
-          <div class="service-heading"><h3>Cabelo + Barba</h3><strong>25€</strong></div>
-          <p>Inclui máscara facial, toalha quente e sobrancelha a cera.</p>
-          <div class="feature-list"><span>Máscara facial</span><span>Toalha quente</span><span>Sobrancelha a cera</span></div>
-        </div>
-        <div class="feature-photo">
-          <div class="mask-photo"></div>
-        </div>
-      </article>
-
-      <article class="fresh-service service-click" data-service="Fresh Up" data-price="10€" data-description="Alinhamento até 7 dias após o serviço de Cabelo + Barba.">
-        <div>
-          <div class="service-heading small"><h3>Fresh Up</h3><strong>10€</strong></div>
-          <p>Podes adicionar um Fresh Up após o teu serviço principal.</p>
-        </div>
-        <div class="fresh-photo"></div>
-        <div class="fresh-line">Completa a tua experiência.</div>
-      </article>
-
-      <div class="service-grid">
-        <article class="service-tile service-click" data-service="Cabelo" data-price="17,5€">
-          <img src="https://images.unsplash.com/photo-1675342656322-80aeeb53ae4a?auto=format&fit=crop&fm=jpg&q=78&w=1200" alt="Corte de cabelo numa barbearia" />
-          <div><h3>Cabelo</h3><strong>17,5€</strong><p>Corte personalizado ao teu estilo.</p></div>
-        </article>
-        <article class="service-tile service-click" data-service="Barba c/ toalha quente" data-price="10€">
-          <img src="https://images.unsplash.com/photo-1559453252-1634e4c59f20?auto=format&fit=crop&fm=jpg&q=78&w=1200" alt="Serviço de barba em barbearia" />
-          <div><h3>Barba c/ toalha quente</h3><strong>10€</strong><p>Barba com definição e toalha quente.</p></div>
-        </article>
-        <article class="service-tile service-click" data-service="Corte Júnior/Sénior" data-price="12,5€">
-          <img src="https://images.unsplash.com/photo-1675342656322-80aeeb53ae4a?auto=format&fit=crop&fm=jpg&q=78&w=1200" alt="Corte de cabelo" />
-          <div><h3>Corte Júnior/Sénior</h3><strong>12,5€</strong><p>Porque estilo não tem idade.</p></div>
-        </article>
-        <article class="service-tile service-click" data-service="Corte + Madeixas" data-price="55€">
-          <img src="https://images.unsplash.com/photo-1559453252-1634e4c59f20?auto=format&fit=crop&fm=jpg&q=78&w=1200" alt="Barbearia premium" />
-          <div><h3>Corte + Madeixas</h3><strong>55€</strong><p>Mais textura, mais personalidade.</p></div>
-        </article>
-        <article class="service-tile service-click" data-service="Corte + Platinado" data-price="65€">
-          <img src="https://images.unsplash.com/photo-1675342656322-80aeeb53ae4a?auto=format&fit=crop&fm=jpg&q=78&w=1200" alt="Corte numa barbearia" />
-          <div><h3>Corte + Platinado</h3><strong>65€</strong><p>Para quem vive o seu estilo sem limites.</p></div>
-        </article>
+        <figure class="tools-photo"><img src="assets/barber-tools.webp" alt="" width="900" height="1200" loading="lazy"></figure>
       </div>
     </section>
 
     <section class="about section" id="sobre">
       <div class="about-copy">
         <span class="micro">Sobre nós</span>
-        <h2>Um clube<br>de atitude.</h2>
-        <p>No TUNNEL Barber Club acreditamos que um bom corte vai além da aparência. É confiança, identidade e atitude. Aqui, cada detalhe conta.</p>
-        <a class="outline-link" href="#contactos">Conhecer mais <span>→</span></a>
+        <h2>TUNNEL<br>BarberClub.</h2>
+        <p>Cabelo, barba, madeixas e platinado. Consulta os preços acima e fala connosco para marcar.</p>
+        <a class="outline-link" href="#contactos">Contactos <span>→</span></a>
       </div>
       <div class="about-photo">
         <img src="https://images.unsplash.com/photo-1559453252-1634e4c59f20?auto=format&fit=crop&fm=jpg&q=85&w=1800" alt="Interior de uma barbearia" />
         <div class="about-logo">
-          <svg viewBox="0 0 160 118" aria-hidden="true">
-            <path d="M18 105V61L45 26H115L142 61V105" fill="none" stroke="currentColor" stroke-width="5"/>
-            <path d="M18 61H49A31 31 0 0 1 111 61H142M35 39l20 28M58 27l10 34M102 27l-10 34M125 39l-20 28M18 78h30M112 78h30M18 92h30M112 92h30" fill="none" stroke="currentColor" stroke-width="3"/>
-            <text x="80" y="80" text-anchor="middle" fill="currentColor" font-size="17" font-family="Barlow Condensed, sans-serif" font-weight="800">TUNNEL</text>
-            <text x="80" y="94" text-anchor="middle" fill="currentColor" font-size="7" font-family="Barlow Condensed, sans-serif" font-weight="700">BARBER CLUB</text>
-          </svg>
+          <span class="logo-crop"><img src="assets/tunnel-logo.webp" alt="TUNNEL BarberClub" width="576" height="768" loading="lazy"></span>
         </div>
       </div>
     </section>
 
     <section class="gallery section" id="galeria">
-      <div class="gallery-head"><span class="micro">Galeria</span><h2>Dentro do Tunnel</h2></div>
+      <div class="gallery-head"><span class="micro">Galeria</span><h2>Barbearia</h2><p class="gallery-note">Imagens de referência.</p></div>
       <div class="gallery-grid">
         <img src="https://images.unsplash.com/photo-1675342656322-80aeeb53ae4a?auto=format&fit=crop&fm=jpg&q=80&w=1400" alt="Barbeiro a trabalhar" />
         <img src="https://images.unsplash.com/photo-1559453252-1634e4c59f20?auto=format&fit=crop&fm=jpg&q=80&w=1400" alt="Ambiente de barbearia" />
@@ -157,7 +120,8 @@
         <div class="map-brand">TUNNEL<br><small>BARBER CLUB</small></div>
       </div>
       <div class="contact-box">
-        <span class="micro">Contactos</span>
+        <span class="micro">Marcações e contactos</span>
+        <p>Envia mensagem no Instagram para combinar o serviço e o horário.</p>
         <a href="https://instagram.com/tunnel.barberclub" target="_blank" rel="noreferrer">@tunnel.barberclub</a>
       </div>
     </section>
@@ -168,13 +132,13 @@
     <span>Porto</span>
   </footer>
 
-  <dialog class="service-modal" id="serviceModal">
+  <dialog class="service-modal" id="serviceModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
     <button class="modal-close" aria-label="Fechar">×</button>
     <span class="micro">Serviço</span>
     <h2 id="modalTitle"></h2>
     <strong id="modalPrice"></strong>
     <p id="modalDescription"></p>
-    <a href="#contactos" class="modal-book">Marcar horário</a>
+    <a href="https://instagram.com/tunnel.barberclub" target="_blank" rel="noopener noreferrer" class="modal-book">Pedir marcação no Instagram ↗</a>
   </dialog>
 
   <script src="script.js"></script>

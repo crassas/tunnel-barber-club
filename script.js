@@ -46,3 +46,25 @@ if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').match
     ['pointerup','pointercancel','pointerleave','blur'].forEach(event=>element.addEventListener(event,()=>animate(element,{scale:1},{duration:.2,ease:'easeOut'})));
   });
 }
+
+// Fade the silent film to black, hold the brand, then restart without a hard cut.
+// Opening hours are intentionally absent until the business confirms them.
+(()=>{
+ const hero=document.querySelector('.hero'), video=document.querySelector('.hero-video'), toggle=document.querySelector('.film-toggle');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ if(!video)return;
+ let paused=false, timer=null, inView=true, intermission=false;
+ const canPlay=()=>!paused&&!reduced.matches&&!document.hidden&&inView;
+ const play=()=>{if(canPlay())video.play().catch(()=>{toggle.hidden=false;toggle.textContent='Reproduzir';toggle.setAttribute('aria-label','Reproduzir animação');});};
+ const sync=()=>{if(canPlay()){if(!intermission)play();}else video.pause();};
+ video.muted=true;
+ video.addEventListener('playing',()=>{hero.classList.add('film-ready');video.classList.add('is-visible');toggle.hidden=false;toggle.textContent='Pausar';toggle.setAttribute('aria-label','Pausar animação');});
+ video.addEventListener('timeupdate',()=>{if(video.duration&&video.currentTime>=video.duration-1)video.classList.remove('is-visible');});
+ video.addEventListener('ended',()=>{intermission=true;video.classList.remove('is-visible');timer=setTimeout(()=>{video.currentTime=0;intermission=false;play();},1600);});
+ video.addEventListener('error',()=>{clearTimeout(timer);hero.classList.remove('film-ready');video.classList.remove('is-visible');toggle.hidden=true;});
+ toggle.addEventListener('click',()=>{paused=!paused;if(paused){video.pause();toggle.textContent='Reproduzir';toggle.setAttribute('aria-label','Reproduzir animação');}else{play();}});
+ document.addEventListener('visibilitychange',sync);
+ new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
+ const start=()=>{if(reduced.matches){video.pause();hero.classList.remove('film-ready');toggle.hidden=true;}else{if(!video.getAttribute('src'))video.src=video.dataset.src;sync();}};
+ reduced.addEventListener('change',start);start();
+})();

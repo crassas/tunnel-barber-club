@@ -67,3 +67,5 @@ footer{padding:32px 0 40px;border-top:1px solid #171717;display:flex;justify-con
 .hero-video{mask-image:linear-gradient(to right,#000 24%,transparent 30%);-webkit-mask-image:linear-gradient(to right,#000 24%,transparent 30%)}
 .hero-visual:before{left:35.5%;top:30%;width:64.5%;height:70%}
 @media(max-width:700px){.hero-video{mask-image:linear-gradient(to right,#000 24%,transparent 30%);-webkit-mask-image:linear-gradient(to right,#000 24%,transparent 30%)}}
+
+.barber-team{margin:28px 0 32px}.barber-team h3{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;font-weight:500}.barber-team ul{list-style:none;margin:14px 0 0;padding:0}.barber-team li{border-top:1px solid #333;padding:11px 0;font-family:"Barlow Condensed",sans-serif;font-size:28px;line-height:1.2}.barber-team li:last-child{border-bottom:1px solid #333}

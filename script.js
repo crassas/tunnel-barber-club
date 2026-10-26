@@ -25,6 +25,10 @@ document.querySelectorAll('.service-click').forEach(el=>el.addEventListener('cli
   title.textContent=el.dataset.service||'Serviço';
   price.textContent=el.dataset.price||'';
   description.textContent=el.dataset.description||'';
+  document.querySelectorAll('input[name="barber"]').forEach(input=>input.checked=false);
+  document.querySelector('.booking-next').hidden=true;
+  document.querySelector('.copy-status').textContent='';
+  document.getElementById('bookingMessage').value='';
   modal.showModal();
 }));
 
@@ -47,22 +51,34 @@ if(window.Motion && !window.matchMedia('(prefers-reduced-motion: reduce)').match
   });
 }
 
-// The encoded film blends its end into its start; native looping never fades to black.
-// Opening hours are intentionally absent until the business confirms them.
+// Continuous silent film, with a full-height portrait source on small screens.
 (()=>{
- const hero=document.querySelector('.hero'), video=document.querySelector('.hero-video'), toggle=document.querySelector('.film-toggle');
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- if(!video)return;
- let paused=false, inView=true;
- const canPlay=()=>!paused&&!reduced.matches&&!document.hidden&&inView;
- const play=()=>{if(canPlay())video.play().catch(()=>{paused=true;toggle.hidden=false;toggle.textContent='Reproduzir';toggle.setAttribute('aria-label','Reproduzir animação');});};
- const sync=()=>{if(canPlay())play();else video.pause();};
+ const hero=document.querySelector('.hero'),video=document.querySelector('.hero-video');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),mobile=matchMedia('(max-width:700px)');
+ let inView=true;
+ const sync=()=>{if(reduced.matches||document.hidden||!inView){video.pause();return;}video.play().catch(()=>{hero.classList.remove('film-ready');});};
  video.muted=true;video.loop=true;
- video.addEventListener('playing',()=>{hero.classList.add('film-ready');video.classList.add('is-visible');toggle.hidden=false;toggle.textContent='Pausar';toggle.setAttribute('aria-label','Pausar animação');});
- video.addEventListener('error',()=>{hero.classList.remove('film-ready');video.classList.remove('is-visible');toggle.hidden=true;});
- toggle.addEventListener('click',()=>{paused=!paused;if(paused){video.pause();toggle.textContent='Reproduzir';toggle.setAttribute('aria-label','Reproduzir animação');}else{play();}});
+ video.addEventListener('playing',()=>{hero.classList.add('film-ready');video.classList.add('is-visible');});
+ video.addEventListener('error',()=>{hero.classList.remove('film-ready');video.classList.remove('is-visible');});
  document.addEventListener('visibilitychange',sync);
  new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;sync();},{threshold:.05}).observe(hero);
- const start=()=>{if(reduced.matches){video.pause();hero.classList.remove('film-ready');toggle.hidden=true;}else{if(!video.getAttribute('src'))video.src=video.dataset.src;sync();}};
- reduced.addEventListener('change',start);start();
+ const start=()=>{if(reduced.matches){video.pause();hero.classList.remove('film-ready');return;}
+ const source=mobile.matches?'assets/hero-smoke-mobile.mp4':video.dataset.src;
+ if(video.getAttribute('src')!==source){video.src=source;video.load();}sync();};
+ reduced.addEventListener('change',start);mobile.addEventListener('change',start);start();
 })();
+
+// Carry the selected service, price and barber into a message the visitor sends.
+document.querySelectorAll('input[name="barber"]').forEach(input=>input.addEventListener('change',()=>{
+ const preference=input.value==='Sem preferência'?'Sem preferência de barbeiro.':`Barbeiro: ${input.value}.`;
+ document.getElementById('bookingMessage').value=`Olá! Gostava de marcar ${title.textContent} (${price.textContent}). ${preference} Que horários têm disponíveis?`;
+ document.querySelector('.booking-next').hidden=false;
+ document.querySelector('.copy-status').textContent='';
+}));
+document.querySelector('.copy-booking').addEventListener('click',async()=>{
+ const message=document.getElementById('bookingMessage'),status=document.querySelector('.copy-status');
+ try{await navigator.clipboard.writeText(message.value);status.textContent='Pedido copiado. Abre o Instagram e cola-o na mensagem.';}
+ catch{message.focus();message.select();status.textContent='Seleciona e copia o texto acima para o enviares no Instagram.';}
+});
+// An opening announcement should not remain a future promise after the date.
+if(new Date()>=new Date('2026-11-02T00:00:00Z'))document.querySelector('.opening-note').hidden=true;

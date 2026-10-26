@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=team-1" />
+  <link rel="stylesheet" href="styles.css?v=booking-mobile-2" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
@@ -24,17 +24,17 @@
       <a href="#sobre">Sobre</a>
       <a href="#contactos">Contactos</a>
     </nav>
-    <a class="pill" href="#contactos">Marcar</a>
+    <a class="pill" href="#servicos">Marcar</a>
     <button class="menu-toggle" aria-controls="navigation" aria-expanded="false">Menu</button>
   </header>
 
   <main id="conteudo">
+    <div class="opening-note"><span>Inauguração</span><strong>Domingo · 1 de novembro</strong></div>
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-visual"><img class="hero-image" src="assets/hero-tunnel.webp" alt="Retrato criado por IA para a TUNNEL BarberClub, com o logótipo da marca" width="1983" height="793" fetchpriority="high"><video class="hero-video" muted playsinline preload="metadata" aria-hidden="true" loop data-src="assets/hero-smoke-loop.mp4"></video></div>
-      <button class="film-toggle" type="button" hidden aria-label="Pausar animação">Pausar</button>
       <div class="hero-content">
         <h1 id="hero-title"><span class="wordmark"><img src="assets/tunnel-wordmark.jpg" alt="TUNNEL Barber Club" width="1152" height="1536"></span></h1>
-        <div class="hero-actions"><a class="action primary" href="#contactos">Marcar <span aria-hidden="true">↗</span></a><a class="action secondary" href="#servicos">Serviços e preços <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-actions"><a class="action primary" href="#servicos">Marcar <span aria-hidden="true">↗</span></a><a class="action secondary" href="#servicos">Serviços e preços <span aria-hidden="true">↓</span></a></div>
       </div>
     </section>
 
@@ -117,14 +117,27 @@
 
   <dialog class="service-modal" id="serviceModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
     <button class="modal-close" aria-label="Fechar">×</button>
-    <span class="micro">Serviço</span>
+    <span class="micro">01 · Serviço escolhido</span>
     <h2 id="modalTitle"></h2>
     <strong id="modalPrice"></strong>
     <p id="modalDescription"></p>
-    <a href="https://instagram.com/tunnel.barberclub" target="_blank" rel="noopener noreferrer" class="modal-book">Pedir marcação no Instagram ↗</a>
+    <fieldset class="barber-choice"><legend>02 · Com quem queres marcar?</legend>
+      <label><input type="radio" name="barber" value="Rafa Soares"><span>Rafa Soares</span></label>
+      <label><input type="radio" name="barber" value="Bruno Hustla"><span>Bruno Hustla</span></label>
+      <label><input type="radio" name="barber" value="Juninho"><span>Juninho</span></label>
+      <label><input type="radio" name="barber" value="Sem preferência"><span>Sem preferência</span></label>
+    </fieldset>
+    <div class="booking-next" hidden>
+      <label for="bookingMessage">O teu pedido</label>
+      <textarea id="bookingMessage" readonly rows="4"></textarea>
+      <button class="copy-booking" type="button">Copiar pedido</button>
+      <p class="copy-status" role="status"></p>
+      <a href="https://instagram.com/tunnel.barberclub" target="_blank" rel="noopener noreferrer" class="modal-book">Abrir Instagram ↗</a>
+      <p class="booking-help">Envia o pedido por mensagem. O dia e a hora ficam sujeitos à confirmação da barbearia.</p>
+    </div>
   </dialog>
 
   <script src="assets/motion-12.23.24.js"></script>
-  <script src="script.js?v=continuous-film-1"></script>
+  <script src="script.js?v=booking-mobile-2"></script>
 </body>
 </html>

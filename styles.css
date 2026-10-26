@@ -196,3 +196,16 @@ footer{padding:32px 0 40px;border-top:1px solid #171717;display:flex;justify-con
 .barber-choice .barber-option:has(input[value="Sem preferência"]){min-height:60px;padding-left:18px}
 @media(hover:hover){.barber-choice .barber-option:hover{background:#202020;border-color:#686868}}
 @media(max-width:380px){.barber-choice .barber-option{gap:10px;padding-right:12px}.barber-choice .barber-option img{width:58px;height:68px}.barber-choice .barber-option span{font-size:14px}}
+
+/* Black surfaces, white hierarchy, grey reserved for quiet edges. */
+.service-modal{background:#090909;border-color:#303030;box-shadow:0 24px 90px #000e,inset 0 1px #ffffff12}
+.barber-choice label,.barber-choice .barber-option{color:#f7f7f5;background:#020202;border:1px solid #292929;box-shadow:0 6px 12px #0009,inset 0 1px #ffffff08}
+.barber-choice .barber-option span{color:#f7f7f5;font-weight:600}
+.barber-choice label:has(input:checked),.barber-choice .barber-option:has(input:checked){background:#080808;border-color:#f1f1ee;box-shadow:inset 4px 0 #f1f1ee,0 7px 16px #000b}
+.barber-choice input[type="radio"]{appearance:none;-webkit-appearance:none;display:grid;place-content:center;flex-shrink:0;width:21px;height:21px;border:1px solid #737373;border-radius:50%;background:#020202;cursor:pointer}
+.barber-choice input[type="radio"]:before{content:"";width:9px;height:9px;border-radius:50%;background:#080808;transform:scale(0)}
+.barber-choice input[type="radio"]:checked{background:#f1f1ee;border-color:#f1f1ee}
+.barber-choice input[type="radio"]:checked:before{transform:scale(1)}
+.barber-choice input[type="radio"]:focus-visible{outline:2px solid white;outline-offset:4px}
+@media(hover:hover){.barber-choice label:hover,.barber-choice .barber-option:hover{background:#0c0c0c;border-color:#777}.barber-choice label:has(input:checked):hover{border-color:#fff;background:#080808}}
+@media(forced-colors:active){.barber-choice input[type="radio"]{appearance:auto}.barber-choice input[type="radio"]:before{display:none}}

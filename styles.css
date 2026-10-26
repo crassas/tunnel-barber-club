@@ -169,6 +169,6 @@ footer{padding:32px 0 40px;border-top:1px solid #171717;display:flex;justify-con
 .portrait-ring{padding:0;border:0;background:transparent;box-shadow:none;overflow:visible}
 .portrait-ring:before{content:"";position:absolute;z-index:-1;inset:15% -5% -5% 10%;border:0;border-radius:50%;background:radial-gradient(ellipse at 42% 45%,#20202080 0%,#11111160 38%,transparent 72%);box-shadow:none;filter:blur(18px);mask-image:none;-webkit-mask-image:none;opacity:.65}
 .portrait-ring:after{display:none}
-.portrait-ring img{position:relative;inset:auto;width:100%;height:100%;border:0;border-radius:0;object-fit:cover;object-position:center 25%;mask-image:radial-gradient(ellipse 64% 66% at 50% 39%,#000 43%,#000e 56%,#0006 70%,transparent 83%);-webkit-mask-image:radial-gradient(ellipse 64% 66% at 50% 39%,#000 43%,#000e 56%,#0006 70%,transparent 83%)}
+.portrait-ring img{position:relative;inset:auto;width:100%;height:100%;border:0;border-radius:0;object-fit:cover;object-position:center 25%;mask-image:radial-gradient(ellipse 64% 57% at 50% 48%,#000 43%,#000e 56%,#0006 70%,transparent 83%);-webkit-mask-image:radial-gradient(ellipse 64% 57% at 50% 48%,#000 43%,#000e 56%,#0006 70%,transparent 83%)}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.portrait-card:hover .portrait-ring{box-shadow:none}.portrait-card:hover .portrait-ring:before{box-shadow:none;opacity:.75}}
 @media(max-width:700px){.portrait-ring{padding:0;border:0;box-shadow:none}.portrait-ring:before{inset:15% -5% -5% 10%;filter:blur(12px)}.portrait-ring img{inset:auto;width:100%;height:100%}}

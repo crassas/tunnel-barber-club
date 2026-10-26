@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=whatsapp-contact-1" />
+  <link rel="stylesheet" href="styles.css?v=studio-team-1" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
@@ -21,6 +21,7 @@
       <a href="#inicio">Início</a>
       <a href="#servicos">Serviços</a>
       <a href="#galeria">Galeria</a>
+      <a href="#equipa">Equipa</a>
       <a href="#sobre">Sobre</a>
       <a href="#contactos">Contactos</a>
     </nav>
@@ -67,12 +68,31 @@
       <p class="photo-note">Fotografias ilustrativas dos serviços.</p>
     </section>
 
+    <section class="team-section section" id="equipa" aria-labelledby="team-title">
+      <div class="section-rule"><span>A equipa</span></div>
+      <div class="team-heading"><h2 id="team-title">O teu corte.<br>As nossas mãos.</h2><p>Conhece os barbeiros da TUNNEL.<br>Escolhe o serviço e com quem queres marcar.</p></div>
+      <div class="portrait-grid">
+        <article class="portrait-card">
+          <img src="assets/rafa-soares-studio.webp" alt="Retrato de Rafa Soares, barbeiro da TUNNEL" width="1122" height="1402" loading="lazy" decoding="async">
+          <div class="portrait-caption"><span class="portrait-number">01 / TUNNEL®</span><h3>Rafa Soares</h3><a href="#servicos" class="portrait-link" aria-label="Ver serviços para marcar com Rafa Soares">Ver serviços <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="portrait-card">
+          <img src="assets/bruno-hustla-studio.webp" alt="Retrato de Bruno Hustla, barbeiro da TUNNEL" width="1122" height="1402" loading="lazy" decoding="async">
+          <div class="portrait-caption"><span class="portrait-number">02 / TUNNEL®</span><h3>Bruno Hustla</h3><a href="#servicos" class="portrait-link" aria-label="Ver serviços para marcar com Bruno Hustla">Ver serviços <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="portrait-card">
+          <img src="assets/juninho-barber-studio.webp" alt="Retrato de Juninho Barber, barbeiro da TUNNEL" width="1122" height="1402" loading="lazy" decoding="async">
+          <div class="portrait-caption"><span class="portrait-number">03 / TUNNEL®</span><h3>Juninho Barber</h3><a href="#servicos" class="portrait-link" aria-label="Ver serviços para marcar com Juninho Barber">Ver serviços <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+
     <section class="about section" id="sobre">
       <div class="about-copy">
         <span class="micro">Sobre nós</span>
         <h2 class="about-brand"><span class="wordmark"><img src="assets/tunnel-wordmark.jpg" alt="TUNNEL Barber Club" width="1152" height="1536"></span></h2>
         <p>Cabelo, barba, madeixas e platinado. Consulta os preços acima e fala connosco para marcar.</p>
-        <div class="barber-team" aria-labelledby="team-title"><h3 id="team-title">Os barbeiros</h3><ul><li>Rafa Soares</li><li>Bruno Hustla</li><li>Juninho</li></ul></div>
+        
         <a class="outline-link" href="#contactos">Contactos <span>→</span></a>
       </div>
       <figure class="about-photo tunnel-interior" id="galeria">
@@ -94,7 +114,7 @@
         <div class="map-brand"><span class="wordmark"><img src="assets/tunnel-wordmark.jpg" alt="TUNNEL Barber Club" width="1152" height="1536"></span></div>
       </div>
       <div class="contact-box">
-        <span class="micro">Marcações e contactos</span>
+        <span class="micro">Marcações e contactos</span><p><a href="https://wa.me/351930626800" target="_blank" rel="noopener noreferrer">WhatsApp · 930 626 800 ↗</a></p><p><a href="tel:+351930626800">Ligar · 930 626 800</a></p><p><a href="mailto:tunnelbarberclub@gmail.com">tunnelbarberclub@gmail.com</a></p>
         <p>Fala connosco para combinar o serviço e o horário.</p>
         <a href="https://instagram.com/tunnel.barberclub" target="_blank" rel="noreferrer">@tunnel.barberclub</a>
       </div>
@@ -113,9 +133,9 @@
     <strong id="modalPrice"></strong>
     <p id="modalDescription"></p>
     <fieldset class="barber-choice"><legend>02 · Com quem queres marcar?</legend>
-      <label><input type="radio" name="barber" value="Rafa Soares"><span>Rafa Soares</span></label>
-      <label><input type="radio" name="barber" value="Bruno Hustla"><span>Bruno Hustla</span></label>
-      <label><input type="radio" name="barber" value="Juninho"><span>Juninho</span></label>
+      <label class="barber-option"><input type="radio" name="barber" value="Rafa Soares"><img src="assets/rafa-soares-studio.webp" alt="" width="60" height="72" loading="lazy"><span>Rafa Soares</span></label>
+      <label class="barber-option"><input type="radio" name="barber" value="Bruno Hustla"><img src="assets/bruno-hustla-studio.webp" alt="" width="60" height="72" loading="lazy"><span>Bruno Hustla</span></label>
+      <label class="barber-option"><input type="radio" name="barber" value="Juninho Barber"><img src="assets/juninho-barber-studio.webp" alt="" width="60" height="72" loading="lazy"><span>Juninho Barber</span></label>
       <label><input type="radio" name="barber" value="Sem preferência"><span>Sem preferência</span></label>
     </fieldset>
     <div class="booking-next" hidden>
@@ -129,6 +149,6 @@
   </dialog>
 
   <script src="assets/motion-12.23.24.js"></script>
-  <script src="script.js?v=whatsapp-contact-1"></script>
+  <script src="script.js?v=contacts-service-choice-1"></script>
 </body>
 </html>

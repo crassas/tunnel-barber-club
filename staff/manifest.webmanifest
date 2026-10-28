@@ -1,0 +1,18 @@
+{
+  "name": "TUNNEL STAFF",
+  "short_name": "TUNNEL STAFF",
+  "description": "Acesso privado da equipa TUNNEL BarberClub",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

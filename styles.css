@@ -210,10 +210,8 @@ footer{padding:32px 0 40px;border-top:1px solid #171717;display:flex;justify-con
 @media(hover:hover){.barber-choice label:hover,.barber-choice .barber-option:hover{background:#0c0c0c;border-color:#777}.barber-choice label:has(input:checked):hover{border-color:#fff;background:#080808}}
 @media(forced-colors:active){.barber-choice input[type="radio"]{appearance:auto}.barber-choice input[type="radio"]:before{display:none}}
 
-/* TUNNEL location: compact square map and standalone brand emblem */
-.location .map-visual{width:min(100%,260px);height:auto;aspect-ratio:1/1;justify-self:center;border:1px solid #424242;box-shadow:0 15px 38px #0008;isolation:isolate}
-.location .map-visual iframe{position:absolute;inset:0;width:100%;height:100%}
-.location .map-emblem{position:absolute;right:10px;top:10px;width:92px;height:92px;display:grid;place-items:center;background:#050505;border:1px solid #777;border-radius:50%;box-shadow:0 5px 22px #000a;pointer-events:none;z-index:2}
-.location .map-emblem .logo-crop{width:80px;height:70px}
-.location .map-emblem .logo-crop img{filter:none}
-@media(max-width:700px){.location .map-visual{width:min(100%,250px);justify-self:center}.location .map-emblem{width:86px;height:86px}.location .map-emblem .logo-crop{width:76px;height:66px}}
+/* Interactive Google map visible through the TUNNEL arch silhouette */
+.location .map-visual.tunnel-map-arch{width:min(100%,302px);height:340px;aspect-ratio:auto;justify-self:center;position:relative;padding:8px;border:0;border-radius:48% 48% 0 0 / 38% 38% 0 0;background:#f1f1ee;box-shadow:0 15px 36px #0009,0 0 0 1px #777;overflow:hidden;isolation:isolate}
+.location .tunnel-map-opening{position:relative;width:100%;height:100%;overflow:hidden;border-radius:48% 48% 0 0 / 37% 37% 0 0;background:#191919}
+.location .tunnel-map-opening iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:700px){.location .map-visual.tunnel-map-arch{width:min(100%,270px);height:306px}}

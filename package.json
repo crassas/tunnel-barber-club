@@ -3,6 +3,14 @@
     "impeccable": "^4.7.0"
   },
   "scripts": {
-    "design:check": "impeccable detect index.html"
+    "design:check": "impeccable detect dist/",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@neondatabase/auth": "^0.6.0-beta",
+    "@neondatabase/serverless": "^1.2.0",
+    "esbuild": "^0.28.2",
+    "jose": "^6.2.13",
+    "web-push": "3.6.7"
   }
 }

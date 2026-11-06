@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tunnel-barberclub.vercel.app/sitemap.xml

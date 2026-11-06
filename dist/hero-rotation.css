@@ -1,0 +1,10 @@
+.hero-info{pointer-events:auto;height:166px}
+.hero-info .info-cube{height:calc(100% - 32px);animation:none;transform:none}
+.hero-info .info-face:nth-child(n){animation:none;transform:none;opacity:0;visibility:hidden;transition:opacity .25s ease}
+.hero-info .info-face.is-active{opacity:1;visibility:visible}
+.hero-rotation-controls{position:absolute;bottom:0;left:12px;display:flex;align-items:center;gap:8px}
+.hero-rotation-controls[hidden]{display:none}
+.hero-rotation-controls button{border:0;background:transparent;color:#b8b8b8;font:500 12px/1.2 Manrope,Arial,sans-serif;min-height:32px;min-width:32px;padding:6px;cursor:pointer}
+.hero-rotation-controls button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(max-width:700px){.hero-info{height:196px}.hero-info .info-face strong{overflow-wrap:normal}.hero-info .info-face small{color:#c5c5c5}}
+@media(prefers-reduced-motion:reduce){.hero-info .info-face:nth-child(n){transition:none}}

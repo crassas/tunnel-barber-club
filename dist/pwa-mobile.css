@@ -1,0 +1,5 @@
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.pwa-install button{min-height:44px;white-space:normal;line-height:1.4;padding:12px;margin-top:8px}
+.pwa-install p[role=status]{overflow-wrap:anywhere}
+@media(max-width:700px){input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px}}
+@media(display-mode:standalone){body{padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px)}}

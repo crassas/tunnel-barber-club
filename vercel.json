@@ -1,0 +1,19 @@
+{
+  "functions": {
+    "api/chat.mjs": {
+      "maxDuration": 15
+    },
+    "api/calendar.mjs": {
+      "maxDuration": 15
+    },
+    "api/technical.mjs": {
+      "maxDuration": 15
+    }
+  },
+  "regions": [
+    "fra1"
+  ],
+  "framework": null,
+  "outputDirectory": "dist",
+  "buildCommand": "npm test"
+}
